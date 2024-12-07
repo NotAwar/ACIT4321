@@ -2,27 +2,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.integrate import solve_ivp
-
-# Parameters
-W = 1.0  # Coupling strength
-a = 0.1  # Slope of epsilon
-hbar = 1.0  # Planck's constant (set to 1 for simplicity)
-tau0 = 10.0  # Time range factor
-
-# Time range
-t_min = -tau0 / a
-t_max = tau0 / a
-
-
-# Define epsilon as a function of time
-def epsilon(t):
-    return a * t
-
-
-# Define the Hamiltonian
-def hamiltonian(t):
-    eps = epsilon(t)
-    return np.array([[-eps / 2, W / 2], [W / 2, eps / 2]])
+from config import W, a, hbar, t_min, t_max
+from hamiltonian import hamiltonian, epsilon
 
 
 # Right-hand side of the Schrödinger equation

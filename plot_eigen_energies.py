@@ -1,15 +1,8 @@
 # -*- coding: utf-8 -*-
 import numpy as np
 import matplotlib.pyplot as plt
+from config import W, a, hbar, t_min, t_max
 
-# Define parameters
-W = 1.0  # Coupling strength
-a = 0.1  # Slope of epsilon
-tau0 = 10.0  # Time range factor
-
-# Time range
-t_min = -tau0 / a
-t_max = tau0 / a
 t_values = np.linspace(t_min, t_max, 1000)
 
 # Compute eigen-energies
